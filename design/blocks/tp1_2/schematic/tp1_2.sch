@@ -35,33 +35,33 @@ C {netlist_not_shown.sym} 320 50 0 0 {name=simulation only_toplevel=false
 value="
 
 * Parameters
-.param vds = 1.8
-.param vgs = 0.9
+.param vds = 1.2
+.param vgs = 0.6
 .options TEMPS = 27.0
 
 * Include Models
-.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice TT
+.lib $PDK_ROOT/sg13g2/libs.tech/ngspice/models/sg13_lv_models.lib typical
 * Data to save
 .save all
-+ @M.XM2.msky130_fd_pr__pfet_01v8[id]
-+ @M.XM2.msky130_fd_pr__pfet_01v8[gm]
-+ @M.XM2.msky130_fd_pr__pfet_01v8[vth]
-+ @M.XM2.msky130_fd_pr__pfet_01v8[vds]
-+ @M.XM2.msky130_fd_pr__pfet_01v8[vdsat]
-+ @M.XM2.msky130_fd_pr__pfet_01v8[vgs]
++ @M.XM2.msg13_lv_pmos[id]
++ @M.XM2.msg13_lv_pmos[gm]
++ @M.XM2.msg13_lv_pmos[vth]
++ @M.XM2.msg13_lv_pmos[vds]
++ @M.XM2.msg13_lv_pmos[vdsat]
++ @M.XM2.msg13_lv_pmos[vgs]
 
 * Simulation
 .control
-  dc VDS 0 1.8 0.01 VGS 0 1.8 0.3
+  dc VDS 0 1.2 0.01 VGS 0 1.2 0.2
   setplot dc1
-  plot @M.XM2.msky130_fd_pr__pfet_01v8[id] ylabel Id xlabel Vds title 'Id vs Vds vs Vgs'
+  plot @M.XM2.msg13_lv_pmos[id] ylabel Id xlabel Vds title 'Id vs Vds vs Vgs'
   set filetype = ascii
   write tp1_2_dc1.raw
 
   reset
-  dc VGS 0 1.8 0.01
+  dc VGS 0 1.2 0.01
   setplot dc2
-  plot @M.XM2.msky130_fd_pr__pfet_01v8[id] ylabel Id xlabel Vgs
+  plot @M.XM2.msg13_lv_pmos[id] ylabel Id xlabel Vgs
   set filetype = ascii
   write tp1_2_dc2.raw
  
@@ -69,18 +69,12 @@ value="
 
 .end
 "}
-C {sky130_fd_pr/pfet_01v8.sym} 730 90 0 0 {name=M2
-L=0.75
-W=3.75
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
+C {sg13g2_pr/sg13_lv_pmos.sym} 730 90 0 0 {name=M2
+l=0.65u
+w=5.0u
+ng=1
+m=1
+model=sg13_lv_pmos
 spiceprefix=X
 }
 C {vsource.sym} 620 50 0 0 {name=VGS value=DC\{vgs\}}

@@ -39,21 +39,21 @@ C {vsource.sym} 410 -130 0 0 {name=V6 value="PULSE(\{vdd\} 0 0.0 1p 1p \{Tclk/4\
 C {netlist_not_shown.sym} -60 -250 0 0 {name=SIMULATION only_toplevel=false
 value="
 * Circuit Parameters
-.param vdd = 1.8
+.param vdd = 1.2
 .param vss = 0.0
 .param Tclk = 10n
-.options TEMP = 65.0
-* Include Models
-.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice TT
+.options TEMP = 27.0
+* Include Models - IHP SG13G2
+.lib $PDK_ROOT/sg13g2/libs.tech/ngspice/models/sg13_lv_models.lib typical
 * OP Parameters & Singals to save
 .save all
 *Simulations
 .control
 tran 0.01u 100n
 setplot tran1
-plot v(vin) v(vout)+2
+plot v(vin) v(vout)+1.2
 reset
-dc V6 0 1.8 0.01
+dc V6 0 1.2 0.01
 setplot dc
 plot vin vout ylabel vout xlabel vin
 set filetype = ascii

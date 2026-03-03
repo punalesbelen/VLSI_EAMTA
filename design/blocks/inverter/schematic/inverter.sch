@@ -24,32 +24,20 @@ N -60 0 -50 0 {lab=in}
 N 0 0 10 0 {lab=out}
 N 80 50 90 50 {lab=vss}
 N 80 -50 90 -50 {lab=vdd}
-C {sky130_fd_pr/nfet_01v8.sym} -20 50 0 0 {name=M1
-W=0.75
-L=0.15
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
+C {sg13g2_pr/sg13_lv_nmos.sym} -20 50 0 0 {name=M1
+w=1.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} -20 -50 0 0 {name=M2
-W=1.5
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
+C {sg13g2_pr/sg13_lv_pmos.sym} -20 -50 0 0 {name=M2
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_pmos
 spiceprefix=X
 }
 C {iopin.sym} 90 -50 0 0 {name=p1 lab=vdd

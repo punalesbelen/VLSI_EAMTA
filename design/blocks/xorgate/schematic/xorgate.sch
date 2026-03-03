@@ -69,172 +69,100 @@ N 130 -10 320 -10 {lab=vdd}
 N 520 -10 600 -10 {lab=vdd}
 N 520 230 600 230 {lab=a_in}
 N 520 290 600 290 {lab=b_in}
-C {sky130_fd_pr/pfet_01v8.sym} -70 40 0 0 {name=M0
-W=1.5
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
+C {sg13g2_pr/sg13_lv_pmos.sym} -70 40 0 0 {name=M0
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} 150 40 0 1 {name=M1
-W=1.5
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
+C {sg13g2_pr/sg13_lv_pmos.sym} 150 40 0 1 {name=M1
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} -70 120 0 0 {name=M2
-W=1.5
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
+C {sg13g2_pr/sg13_lv_pmos.sym} -70 120 0 0 {name=M2
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} 150 120 0 1 {name=M3
-W=1.5
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
+C {sg13g2_pr/sg13_lv_pmos.sym} 150 120 0 1 {name=M3
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} -70 200 0 0 {name=M4
-W=1.5
-L=0.15
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
+C {sg13g2_pr/sg13_lv_nmos.sym} -70 200 0 0 {name=M4
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 150 200 0 1 {name=M5
-W=1.5
-L=0.15
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
+C {sg13g2_pr/sg13_lv_nmos.sym} 150 200 0 1 {name=M5
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} -70 280 0 0 {name=M6
-W=1.5
-L=0.15
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
+C {sg13g2_pr/sg13_lv_nmos.sym} -70 280 0 0 {name=M6
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 150 280 0 1 {name=M7
-W=1.5
-L=0.15
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
+C {sg13g2_pr/sg13_lv_nmos.sym} 150 280 0 1 {name=M7
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} 300 40 0 0 {name=M8
-W=1.5
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
+C {sg13g2_pr/sg13_lv_pmos.sym} 300 40 0 0 {name=M8
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 300 120 0 0 {name=M9
-W=0.75
-L=0.15
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
+C {sg13g2_pr/sg13_lv_nmos.sym} 300 120 0 0 {name=M9
+w=1.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8.sym} 540 40 0 1 {name=M10
-W=1.5
-L=0.15
-nf=1
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=pfet_01v8
+C {sg13g2_pr/sg13_lv_pmos.sym} 540 40 0 1 {name=M10
+w=2.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sky130_fd_pr/nfet_01v8.sym} 540 120 0 1 {name=M11
-W=0.75
-L=0.15
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
+C {sg13g2_pr/sg13_lv_nmos.sym} 540 120 0 1 {name=M11
+w=1.0u
+l=0.13u
+ng=1
+m=1
+model=sg13_lv_nmos
 spiceprefix=X
 }
 C {iopin.sym} -110 160 0 1 {name=p1 lab=out}
