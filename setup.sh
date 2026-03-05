@@ -141,7 +141,7 @@ if [ ! -f "$SETUP_FLAG" ]; then
     if [ ! -d ".git" ] && [ ! -d "EAMTA2026-VLSI" ]; then
         git clone https://github.com/Fundacion-Fulgor/EAMTA2026-VLSI.git
     fi
-    if [ -d "EAMTA2026-VLSI" ]; then
+    if [ -d "EAMTA2026-VLSI/.git" ]; then
         cd EAMTA2026-VLSI
         git remote set-url origin git@github.com:Fundacion-Fulgor/EAMTA2026-VLSI.git
     fi
