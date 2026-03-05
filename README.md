@@ -1,6 +1,15 @@
 # EAMTA2026-VLSI
 Repository containing the "Introduction to Very Large Scale Integration Design" course from the 2026 Argentine School for Micro-nano Electronics, Technology and Applications
 
+## Getting Started
+
+See [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md) for setup instructions.
+
+See [docs/STUDENT_WORKFLOW.md](docs/STUDENT_WORKFLOW.md) for the development workflow.
+
+See [docs/DESIGN_SPECIFICATIONS.md](docs/DESIGN_SPECIFICATIONS.md) for detailed design specifications.
+
+
 ## Course Project: 4-bit Counter Design
 
 This repository contains the design and verification flow for a 4-bit counter implemented in the IHP SG13G2 130nm PDK. The project is structured to allow multiple student groups to work collaboratively on different blocks of the counter.
@@ -42,14 +51,6 @@ The 4-bit counter consists of the following blocks:
 5. **Top-Level Counter** - 4-bit counter integration
 
 Each student group will be assigned one or more blocks to design, simulate, characterize, and layout.
-
-### Getting Started
-
-See [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md) for setup instructions.
-
-See [docs/STUDENT_WORKFLOW.md](docs/STUDENT_WORKFLOW.md) for the development workflow.
-
-See [docs/DESIGN_SPECIFICATIONS.md](docs/DESIGN_SPECIFICATIONS.md) for detailed design specifications.
 
 ### Group Assignments
 
