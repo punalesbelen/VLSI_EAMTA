@@ -6,8 +6,6 @@ This guide will help you set up the development environment for the 4-bit counte
 
 ### 1. Automated Installation
 
-This section provides single commands to install dependencies, clone the repository, and run the setup script without requiring user interaction during the process.
-
 #### Windows (PowerShell)
 
 Open **PowerShell** and paste this single command — it installs WSL + Ubuntu and sets up the entire design environment automatically:
@@ -16,7 +14,7 @@ Open **PowerShell** and paste this single command — it installs WSL + Ubuntu a
 irm https://raw.githubusercontent.com/Fundacion-Fulgor/EAMTA2026-VLSI/develop/install-wsl.ps1 | iex
 ```
 
-> **Note:** The first boot may take a few minutes while the environment is configured. Once complete, opening "Ubuntu-24.04" from the Start Menu will drop you directly into the design environment.
+> **Note:** The first boot may take ~20 minutes while the environment is configured. Once complete, opening "Ubuntu-24.04" from the Start Menu will drop you directly into the design environment.
 
 #### Linux (Terminal)
 
@@ -26,11 +24,9 @@ If you are already on a Linux system, open your terminal and run:
 cd ~ && { [ -d EAMTA2026-VLSI ] || git clone https://github.com/Fundacion-Fulgor/EAMTA2026-VLSI.git; } && cd EAMTA2026-VLSI && ./setup.sh
 ```
 
-### 2. Set Up GitHub SSH Keys (Optional)
+### 2. Set Up GitHub SSH Keys (Optional, advanced students)
 
-**Note** The automated installation generates an SSH key automatically (no prompts required). You will still need to **manually add your generated SSH key to GitHub** (see Step 2 below) to be able to push your assigned block!
-
-Whether you used the automated or manual installation, you can add the generated SSH key to your GitHub account to push your work.
+**Note** The automated installation generates an SSH key automatically (no prompts required). If you want to push your work publicly, you will still need to manually add your generated SSH key to GitHub.
 
 1. Create a GitHub account at [github.com](https://github.com) if you don't have one.
 2. The installation script will automatically print your new SSH public key at the end of the process (and copy it to your clipboard).
@@ -54,7 +50,6 @@ The IHP SG13G2 PDK should be available in the container. Verify by checking:
 echo $PDK_ROOT
 ls $PDK_ROOT
 ```
-
 If the PDK is not available, try running `sak-pdk ihp-sh13g2` to set the correct environment variables.
 
 ## Directory Structure
