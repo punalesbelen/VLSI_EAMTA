@@ -32,13 +32,13 @@ git checkout -b group-<N>/<block-name>
 
 1. Create your block directory:
    ```bash
-   mkdir -p design/blocks/<block-name>/schematic
-   cd design/blocks/<block-name>/schematic
+   cd design
+   mkdir -p blocks/<block-name>/schematic
    ```
 
 2. Create schematic in xschem:
    ```bash
-   xschem <block-name>.sch
+   xschem blocks/<block-name>/<block-name>.sch
    ```
 
 3. Design guidelines:
