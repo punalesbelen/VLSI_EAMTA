@@ -64,19 +64,7 @@ git checkout -b group-<N>/<block-name>
    - Add stimulus sources
    - Add measurement probes
 
-3. Generate netlist from xschem
-
-4. Run simulation:
-   ```bash
-   ngspice <block-name>_tb.spice
-   ```
-
-5. Verify functionality:
-   - Check logic operation
-   - Measure timing parameters
-   - Verify across corners (TT, FF, SS)
-
-6. Document results in a README.md in your testbench directory
+3. Click Netlist and when it's green, simulate
 
 #### 3.3 Characterization (CACE)
 
