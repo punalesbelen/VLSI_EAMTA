@@ -17,10 +17,10 @@ N 24 -164 24 -54 {lab=#net4}
 N 23 -54 24 -54 {lab=#net4}
 N 24 -54 83 -54 {lab=#net4}
 N 164 -168 189 -168 {lab=#net5}
-N 269 -163 380 -164 {lab=#net6}
-N 380 -164 380 -156 {lab=#net6}
-N 380 -25 380 -4 {lab=#net7}
-N 324 -5 380 -4 {lab=#net7}
+N 269 -163 380 -164 {lab=xxx}
+N 380 -164 380 -156 {lab=xxx}
+N 380 -25 380 -4 {lab=#net6}
+N 324 -5 380 -4 {lab=#net6}
 N 163 0 164 -168 {lab=#net5}
 N 153 -168 164 -168 {lab=#net5}
 N 163 0 193 0 {lab=#net5}
@@ -66,3 +66,4 @@ C {lab_pin.sym} 26 34 3 0 {name=p24 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 25 -29 1 0 {name=p25 sig_type=std_logic lab=vdd}
 C {iopin.sym} 53 5 0 0 {name=p26 lab=clr
 }
+C {iopin.sym} 380 -164 0 0 {name=p27 lab=Q}
