@@ -19,8 +19,8 @@ N 570 1210 570 1250 {lab=vout}
 N 490 1210 570 1210 {lab=vout}
 N 610 1280 650 1280 {lab=B}
 N 310 1280 360 1280 {lab=A}
-N 400 1100 450 1100 {lab=B}
-N 530 1000 580 1000 {lab=A}
+N 400 1100 450 1100 {lab=A}
+N 530 1000 580 1000 {lab=xxx}
 N 570 1210 650 1210 {lab=vout}
 N 490 1100 660 1100 {lab=vdd}
 N 660 940 660 1100 {lab=vdd}
@@ -61,10 +61,10 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {iopin.sym} 580 1000 0 0 {name=p1 lab=A}
 C {iopin.sym} 490 910 3 0 {name=p2 lab=vdd}
-C {iopin.sym} 400 1100 2 0 {name=p3 lab=B}
 C {iopin.sym} 650 1210 0 0 {name=p4 lab=vout}
 C {iopin.sym} 650 1280 0 0 {name=p5 lab=B}
 C {iopin.sym} 490 1390 1 0 {name=p6 lab=vss}
 C {iopin.sym} 310 1280 2 0 {name=p7 lab=A}
+C {lab_pin.sym} 400 1100 0 0 {name=p1 sig_type=std_logic lab=A}
+C {lab_pin.sym} 580 1000 2 0 {name=p3 sig_type=std_logic lab=B}
