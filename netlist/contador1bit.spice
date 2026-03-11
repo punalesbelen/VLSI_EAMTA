@@ -1,9 +1,9 @@
-** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/verification/testbenches/contador1bit.sch
+** sch_path: /home/eamtastudent/EAMTA2026-VLSI/verification/testbenches/countador1bit/contador1bit.sch
 **.subckt contador1bit
-x1 vss net1 net2 net3 net4 vss sout circuito_completo
-V1 vdd vss DC{vdd}
-V6 clk vss PULSE({vdd} 0 0.0 1p 1p {Tclk/4} {Tclk/2}) DC 0 AC 0
-V3 vss 0 DC{vss}
+x1 net1 out net2 net3 vin net4 contador1bit
+V1 avss 0 DC{vss}
+V2 avdd avss DC{vdd}
+V6 vin avss PULSE({vdd} 0 0.0 1p 1p {Tclk/4} {Tclk/2}) DC 0 AC 0
 **** begin user architecture code
 
 
@@ -20,8 +20,9 @@ V3 vss 0 DC{vss}
 .control
 tran 0.01u 100n
 setplot tran1
-plot v(clk) v(Dn)
+plot v(vin) v(vout)
 reset
+dc V6 0 1.2 0.01
 setplot dc
 plot vin vout ylabel vout xlabel vin
 set filetype = ascii
@@ -33,20 +34,19 @@ write dcsweep.raw
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  blocks/circuito_completo/circuito_completo.sym # of pins=7
-** sym_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/circuito_completo/circuito_completo.sym
-** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/circuito_completo/circuito_completo.sch
-.subckt circuito_completo clr Dn CE CLK vdd vss Sout
-*.iopin vdd
-*.iopin vss
-*.iopin CE
-*.iopin Sout
-*.iopin CLK
+* expanding   symbol:  blocks/contador1bit/contador1bit.sym # of pins=6
+** sym_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/contador1bit/contador1bit.sym
+** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/contador1bit/contador1bit.sch
+.subckt contador1bit clr Dn vdd vss clk sout
 *.iopin clr
+*.iopin vss
+*.iopin vdd
+*.iopin clk
+*.iopin sout
 *.iopin Dn
-x1 net3 net4 net2 vss net5 net6 flipflop
-x2 vdd net7 CE net2 net8 puertaxor
-x3 vdd Sout CE net1 vss puertaand
+x1 net3 net4 net2 net5 net6 net7 flipflop
+x2 vdd net8 net1 net2 vss puertaxor
+x3 vdd sout net1 net9 vss puertaand
 .ends
 
 
@@ -83,12 +83,12 @@ x9 net27 net28 net29 vss untitled
 *.iopin Vdd
 XM1 Z A net1 Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
 XM2 net1 bb Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
-XM3 Vdd net4 net1 Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
-XM4 net1 B Z Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM3 net1 ab Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM4 Z B net4 Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
 XM5 Z ab net2 vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 XM6 net2 bb vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
-XM7 net3 A Z vss sg13_lv_nmos w=0.15u l=0.13u ng=1
-XM8 vss B net3 vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM7 Z A net3 vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM8 net3 B vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 XM9 ab A Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
 XM10 ab A vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 XM11 bb B Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
@@ -153,8 +153,8 @@ XM2 Out in Vss Vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 *.iopin A
 XM1 net1 B vdd vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
 XM2 vout A net1 vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
-XM3 vout A vss net3 sg13_lv_nmos w=0.15u l=0.13u ng=1
-XM4 vout B vss net4 sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM3 vout A vss net2 sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM4 vout B vss net3 sg13_lv_nmos w=0.15u l=0.13u ng=1
 .ends
 
 

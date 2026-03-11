@@ -1,0 +1,10 @@
+** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/inversor/untitled.sch
+**.subckt untitled Vdd Out in Vss
+*.iopin Vdd
+*.iopin Out
+*.iopin Vss
+*.iopin in
+XM1 Out in Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM2 Out in Vss Vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+**.ends
+.end

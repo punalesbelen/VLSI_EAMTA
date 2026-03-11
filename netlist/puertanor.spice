@@ -1,0 +1,13 @@
+** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/puertanor/puertanor.sch
+**.subckt puertanor vdd vout B A vss
+*.iopin vdd
+*.iopin vout
+*.iopin B
+*.iopin vss
+*.iopin A
+XM1 net1 B vdd vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM2 vout A net1 vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM3 vout A vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM4 vout B vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+**.ends
+.end
