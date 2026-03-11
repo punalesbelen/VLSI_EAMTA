@@ -1,9 +1,16 @@
 ** sch_path: /home/eamtastudent/EAMTA2026-VLSI/verification/testbenches/countador1bit/contador1bit.sch
-**.subckt contador1bit
-x1 avss out vin avdd avss sout contador1bit
+**.subckt contador1bit out1 out2 out3 out4
+*.iopin out1
+*.iopin out2
+*.iopin out3
+*.iopin out4
+x1 avss out1 avdd vin avdd avss net1 contador1bit
 V1 avss 0 DC{vss}
 V2 avdd avss DC{vdd}
 V6 vin avss PULSE({vdd} 0 0.0 1p 1p {Tclk/4} {Tclk/2}) DC 0 AC 0
+x2 avss out2 net1 vin avdd avss net2 contador1bit
+x3 avss out3 net2 vin avdd avss net3 contador1bit
+x4 avss out4 net3 vin avdd avss soutbelula contador1bit
 **** begin user architecture code
 
 
@@ -20,11 +27,10 @@ V6 vin avss PULSE({vdd} 0 0.0 1p 1p {Tclk/4} {Tclk/2}) DC 0 AC 0
 .control
 tran 0.01u 100n
 setplot tran1
-plot v(vin) v(vout)
+plot v(vin) v(out1)+1.2 v(out2)+2.4 v(out3)+3.6 v(out4)+4.8
 reset
 dc V6 0 1.2 0.01
 setplot dc
-plot vin vout ylabel vout xlabel vin
 set filetype = ascii
 write dcsweep.raw
 .endc
@@ -34,19 +40,20 @@ write dcsweep.raw
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  blocks/contador1bit/contador1bit.sym # of pins=6
+* expanding   symbol:  blocks/contador1bit/contador1bit.sym # of pins=7
 ** sym_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/contador1bit/contador1bit.sym
 ** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/contador1bit/contador1bit.sch
-.subckt contador1bit clr Dn clk vdd vss sout
+.subckt contador1bit clr Dn CE clk vdd vss sout
 *.iopin clr
 *.iopin vss
 *.iopin vdd
 *.iopin sout
 *.iopin Dn
 *.iopin clk
-x1 net2 Dn vss clr clk vdd flipflop
-x2 vdd Dn net1 net2 vss puertaxor
-x3 vdd sout net1 Dn vss puertaand
+*.iopin CE
+x1 net1 Dn vss clr clk vdd flipflop
+x2 vdd Dn CE net1 vss puertaxor
+x3 vdd sout CE Dn vss puertaand
 .ends
 
 
