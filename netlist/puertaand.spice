@@ -1,0 +1,15 @@
+** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/puertaand/puertaand.sch
+**.subckt puertaand vdd out A B vss
+*.iopin A
+*.iopin B
+*.iopin vdd
+*.iopin vss
+*.iopin out
+XM1 net2 B vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM2 net1 A net2 vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM3 net1 A vdd vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM4 net1 B vdd vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM5 out net1 vdd vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM6 out net1 vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+**.ends
+.end

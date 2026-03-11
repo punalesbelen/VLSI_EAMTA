@@ -1,6 +1,6 @@
 ** sch_path: /home/eamtastudent/EAMTA2026-VLSI/verification/testbenches/countador1bit/contador1bit.sch
 **.subckt contador1bit
-x1 net1 out net2 net3 vin net4 contador1bit
+x1 avss out vin avdd avss sout contador1bit
 V1 avss 0 DC{vss}
 V2 avdd avss DC{vdd}
 V6 vin avss PULSE({vdd} 0 0.0 1p 1p {Tclk/4} {Tclk/2}) DC 0 AC 0
@@ -37,38 +37,38 @@ write dcsweep.raw
 * expanding   symbol:  blocks/contador1bit/contador1bit.sym # of pins=6
 ** sym_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/contador1bit/contador1bit.sym
 ** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/contador1bit/contador1bit.sch
-.subckt contador1bit clr Dn vdd vss clk sout
+.subckt contador1bit clr Dn clk vdd vss sout
 *.iopin clr
 *.iopin vss
 *.iopin vdd
-*.iopin clk
 *.iopin sout
 *.iopin Dn
-x1 net3 net4 net2 net5 net6 net7 flipflop
-x2 vdd net8 net1 net2 vss puertaxor
-x3 vdd sout net1 net9 vss puertaand
+*.iopin clk
+x1 net2 Dn vss clr clk vdd flipflop
+x2 vdd Dn net1 net2 vss puertaxor
+x3 vdd sout net1 Dn vss puertaand
 .ends
 
 
 * expanding   symbol:  blocks/flipflop/flipflop.sym # of pins=6
 ** sym_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/flipflop/flipflop.sym
 ** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/flipflop/flipflop.sch
-.subckt flipflop vdd Q D vss clr clk
-*.iopin D
+.subckt flipflop D Q vss clr clk vdd
+*.iopin clr
 *.iopin vdd
 *.iopin vss
 *.iopin clk
-*.iopin clr
+*.iopin D
 *.iopin Q
-x1 clk net1 D vss net7 interruptor
-x2 net8 net9 net1 net10 untitled
-x3 net11 net5 net4 net12 vdd interruptor
-x4 net13 net14 net1 vss net15 interruptor
-x5 vdd n_clk net16 vss untitled
-x6 net17 net18 net19 net20 vdd interruptor
-x7 net21 net22 net23 net5 net24 puertanor
-x8 vdd net3 net4 net25 net26 puertanor
-x9 net27 net28 net29 vss untitled
+x1 clk D net1 nclk vss vdd interruptor
+x2 vdd nclk clk vss untitled
+x3 nclk net1 net5 clk vss vdd interruptor
+x4 vdd net2 net1 vss untitled
+x5 nclk net2 net3 clk vss vdd interruptor
+x6 vdd net5 net2 clr vss puertanor
+x7 clk net3 net4 nclk vss vdd interruptor
+x8 vdd net4 Q vss untitled
+x9 vdd Q net3 clr vss puertanor
 .ends
 
 
@@ -114,18 +114,18 @@ XM6 out net1 vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 .ends
 
 
-* expanding   symbol:  blocks/interruptor/interruptor.sym # of pins=5
+* expanding   symbol:  blocks/interruptor/interruptor.sym # of pins=6
 ** sym_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/interruptor/interruptor.sym
 ** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/interruptor/interruptor.sch
-.subckt interruptor clk out in vss vdd
-*.iopin clk
+.subckt interruptor N in out P vss vdd
+*.iopin N
 *.iopin in
 *.iopin out
 *.iopin vdd
 *.iopin vss
-XM1 out net1 in vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
-XM2 out clk in vss sg13_lv_nmos w=0.15u l=0.13u ng=1
-x1 vdd net1 clk vss inversor
+*.iopin P
+XM1 out P in vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM2 out N in vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 .ends
 
 
@@ -153,21 +153,8 @@ XM2 Out in Vss Vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 *.iopin A
 XM1 net1 B vdd vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
 XM2 vout A net1 vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
-XM3 vout A vss net2 sg13_lv_nmos w=0.15u l=0.13u ng=1
-XM4 vout B vss net3 sg13_lv_nmos w=0.15u l=0.13u ng=1
-.ends
-
-
-* expanding   symbol:  blocks/inversor/schematic/inversor.sym # of pins=4
-** sym_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/inversor/schematic/inversor.sym
-** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/inversor/schematic/inversor.sch
-.subckt inversor Vdd out in vss
-*.iopin Vdd
-*.iopin out
-*.iopin vss
-*.iopin in
-XM1 out in Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
-XM2 out in vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM3 vout A vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM4 vout B vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 .ends
 
 .end

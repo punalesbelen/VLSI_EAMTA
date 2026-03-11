@@ -1,25 +1,12 @@
 ** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/interruptor/interruptor.sch
-**.subckt interruptor clk out in vss vdd
-*.iopin clk
+**.subckt interruptor N in out P vss vdd
+*.iopin N
 *.iopin in
 *.iopin out
 *.iopin vdd
 *.iopin vss
-XM1 out net1 in vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
-XM2 out clk in vss sg13_lv_nmos w=0.15u l=0.13u ng=1
-x1 vdd net1 clk vss inversor
+*.iopin P
+XM1 out P in vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM2 out N in vss sg13_lv_nmos w=0.15u l=0.13u ng=1
 **.ends
-
-* expanding   symbol:  blocks/inversor/schematic/inversor.sym # of pins=4
-** sym_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/inversor/schematic/inversor.sym
-** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/inversor/schematic/inversor.sch
-.subckt inversor Vdd out in vss
-*.iopin Vdd
-*.iopin out
-*.iopin vss
-*.iopin in
-XM1 out in Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
-XM2 out in vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
-.ends
-
 .end
