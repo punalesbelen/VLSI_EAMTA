@@ -1,0 +1,21 @@
+** sch_path: /home/eamtastudent/EAMTA2026-VLSI/design/blocks/puertaxor/puertaxor.sch
+**.subckt puertaxor Vdd A B Z vss
+*.iopin A
+*.iopin B
+*.iopin vss
+*.iopin Z
+*.iopin Vdd
+XM1 Z A net1 Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM2 net1 bb Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM3 Vdd net4 net1 Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM4 net1 B Z Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM5 Z ab net2 vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM6 net2 bb vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM7 net3 A Z vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM8 vss B net3 vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM9 ab A Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM10 ab A vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM11 bb B Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM12 bb B vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+**.ends
+.end
