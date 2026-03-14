@@ -72,4 +72,4 @@ C {lab_pin.sym} 890 -80 1 0 {name=p23 sig_type=std_logic lab=avdd}
 C {lab_pin.sym} 1020 60 2 0 {name=p24 sig_type=std_logic lab=vin}
 C {lab_pin.sym} 890 100 3 0 {name=p25 sig_type=std_logic lab=avss}
 C {iopin.sym} 850 0 2 0 {name=p26 lab=out4}
-C {lab_pin.sym} 1020 -30 2 0 {name=p27 sig_type=std_logic lab=soutbelula}
+C {lab_pin.sym} 1020 -30 2 0 {name=p27 sig_type=std_logic lab=sout}

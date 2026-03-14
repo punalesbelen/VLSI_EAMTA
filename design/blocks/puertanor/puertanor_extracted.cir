@@ -1,0 +1,12 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 13/03/2026 18:21
+
+.SUBCKT puertanor
+M$1 \$1 \$5 \$4 \$1 sg13_lv_nmos L=0.15u W=0.75u AS=0.255p AD=0.255p PS=2.18u
++ PD=2.18u
+M$2 \$1 \$6 \$4 \$1 sg13_lv_nmos L=0.15u W=0.75u AS=0.255p AD=0.255p PS=2.18u
++ PD=2.18u
+M$3 \$2 \$5 \$3 \$2 sg13_lv_pmos L=0.15u W=3u AS=1.02p AD=0.57p PS=6.68u
++ PD=3.38u
+M$4 \$3 \$6 \$4 \$2 sg13_lv_pmos L=0.15u W=3u AS=0.57p AD=1.02p PS=3.38u
++ PD=6.68u
+.ENDS puertanor
