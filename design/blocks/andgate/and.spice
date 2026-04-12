@@ -1,0 +1,19 @@
+** sch_path: /home/eamtastudent/VLSI_EAMTA/design/blocks/andgate/and.sch
+.subckt and A B vdd vss vout
+*.PININFO A:B B:B vdd:B vss:B vout:B
+M1 net1 B vdd vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+M2 net1 A net2 vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+M3 net2 B vss vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+M4 net1 A vdd vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+x1 vdd vout net1 vss untitled
+.ends
+
+* expanding   symbol:  blocks/inversor/untitled.sym # of pins=4
+** sym_path: /home/eamtastudent/VLSI_EAMTA/design/blocks/inversor/untitled.sym
+** sch_path: /home/eamtastudent/VLSI_EAMTA/design/blocks/inversor/untitled.sch
+.subckt untitled Vdd Out in Vss
+*.PININFO Vdd:B Out:B Vss:B in:B
+M1 Out in Vdd Vdd sg13_lv_pmos w=0.15u l=0.13u ng=1
+M2 Out in Vss Vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+.ends
+
