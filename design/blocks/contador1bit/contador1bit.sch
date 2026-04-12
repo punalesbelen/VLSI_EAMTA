@@ -31,4 +31,4 @@ C {iopin.sym} -400 120 1 0 {name=p9 lab=sout}
 C {iopin.sym} 310 -100 0 0 {name=p3 lab=Dn}
 C {lab_pin.sym} 100 50 3 0 {name=p8 sig_type=std_logic lab=vdd}
 C {iopin.sym} 0 20 2 0 {name=p10 lab=clk}
-C {iopin.sym} -340 -30 1 0 {name=p11 lab=CE}
+C {iopin.sym} -320 -30 1 0 {name=p11 lab=CE}
