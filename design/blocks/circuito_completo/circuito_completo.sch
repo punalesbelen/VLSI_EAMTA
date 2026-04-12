@@ -21,7 +21,7 @@ N 179 -120 285 -120 {lab=#net1}
 N 476 -277 476 -274 {lab=Dn}
 N 436 -118 476 -118 {lab=Dn}
 N 476 -274 476 -118 {lab=Dn}
-C {blocks/flipflop/flipflop.sym} 371 -83 0 0 {name=x1}
+C {blocks/flipflop/flipflop.sym} 411 -93 0 0 {name=x1}
 C {blocks/puertaxor/puertaxor.sym} 20 40 0 0 {name=x2}
 C {blocks/puertaand/puertaand.sym} -160 90 1 0 {name=x3}
 C {lab_pin.sym} 315 73 3 0 {name=p1 sig_type=std_logic lab=vdd}
