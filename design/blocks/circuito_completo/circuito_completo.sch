@@ -38,9 +38,9 @@ C {lab_pin.sym} 620 -80 1 0 {name=p17 sig_type=std_logic lab=Vdd
 C {lab_pin.sym} 80 -60 1 0 {name=p23 sig_type=std_logic lab=Clr
 
 }
-C {lab_pin.sym} 390 -80 1 0 {name=p5 sig_type=std_logic lab=Vdd
+C {lab_pin.sym} 390 -80 1 0 {name=p5 sig_type=std_logic lab=Clr
 }
-C {lab_pin.sym} 670 -80 1 0 {name=p8 sig_type=std_logic lab=Vdd
+C {lab_pin.sym} 670 -80 1 0 {name=p8 sig_type=std_logic lab=Clr
 }
 C {lab_pin.sym} 750 60 2 0 {name=p15 sig_type=std_logic lab=Clk
 
