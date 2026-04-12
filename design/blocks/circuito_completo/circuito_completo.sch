@@ -5,37 +5,42 @@ V {}
 S {}
 F {}
 E {}
-N -60 -100 -60 10 {lab=CE}
-N -60 -100 60 -100 {lab=CE}
-N -160 -100 -60 -100 {lab=CE}
-N -82 -138 -82 11 {lab=Dn}
-N 26 -138 56 -138 {lab=Dn}
-N 253 22 287 22 {lab=CLK}
-N 26 -274 476 -274 {lab=Dn}
-N 26 -274 26 -138 {lab=Dn}
-N -68 104 -68 138 {lab=Sout}
-N -68 138 14 138 {lab=Sout}
-N 476 -118 476 -117 {lab=Dn}
-N -82 -138 26 -138 {lab=Dn}
-N 179 -120 285 -120 {lab=#net1}
-N 476 -277 476 -274 {lab=Dn}
-N 436 -118 476 -118 {lab=Dn}
-N 476 -274 476 -118 {lab=Dn}
-C {blocks/flipflop/flipflop.sym} 411 -93 0 0 {name=x1}
-C {blocks/puertaxor/puertaxor.sym} 20 40 0 0 {name=x2}
-C {blocks/puertaand/puertaand.sym} -160 90 1 0 {name=x3}
-C {lab_pin.sym} 315 73 3 0 {name=p1 sig_type=std_logic lab=vdd}
-C {lab_pin.sym} 405 71 3 0 {name=p2 sig_type=std_logic lab=vss}
-C {lab_pin.sym} 120 -160 1 0 {name=p3 sig_type=std_logic lab=vdd}
-C {lab_pin.sym} 124 -81 3 0 {name=p4 sig_type=std_logic lab=vss
-
+N 160 -10 200 -10 {lab=#net1}
+N 200 -10 200 30 {lab=#net1}
+N 200 30 300 30 {lab=#net1}
+N 470 -30 490 -30 {lab=#net2}
+N 490 -30 490 30 {lab=#net2}
+N 490 30 580 30 {lab=#net2}
+N 750 -30 770 -30 {lab=#net3}
+N 770 -30 770 30 {lab=#net3}
+N 770 30 850 30 {lab=#net3}
+C {blocks/contador1bit/contador1bit.sym} 10 30 0 0 {name=x1}
+C {blocks/contador1bit/contador1bit.sym} 320 10 0 0 {name=x2}
+C {blocks/contador1bit/contador1bit.sym} 600 10 0 0 {name=x3}
+C {blocks/contador1bit/contador1bit.sym} 870 10 0 0 {name=x4}
+C {iopin.sym} -10 50 2 0 {name=p1 lab=CE}
+C {iopin.sym} 30 120 1 0 {name=p2 lab=Vss}
+C {iopin.sym} 160 80 0 0 {name=p3 lab=Clk}
+C {iopin.sym} 30 -60 3 0 {name=p4 lab=Vdd}
+C {iopin.sym} 80 -60 3 0 {name=p5 lab=Clr
 }
-C {iopin.sym} -24 46 0 0 {name=p5 lab=vdd}
-C {iopin.sym} -114 48 2 0 {name=p6 lab=vss}
-C {iopin.sym} -158 -100 2 0 {name=p7 lab=CE}
-C {iopin.sym} 14 138 0 0 {name=p8 lab=Sout}
-C {iopin.sym} 257 22 2 0 {name=p9 lab=CLK
+C {iopin.sym} 340 100 1 0 {name=p6 lab=Vss}
+C {iopin.sym} 340 -80 3 0 {name=p7 lab=Vdd}
+C {iopin.sym} 390 -80 3 0 {name=p8 lab=Clr
 }
-C {iopin.sym} 373 -211 3 0 {name=p10 lab=clr}
-C {iopin.sym} 476 -185 0 0 {name=p11 lab=Dn
+C {iopin.sym} 470 60 0 0 {name=p9 lab=Clk}
+C {iopin.sym} 620 100 1 0 {name=p10 lab=Vss}
+C {iopin.sym} 890 100 1 0 {name=p11 lab=Vss}
+C {iopin.sym} 750 60 0 0 {name=p13 lab=Clk}
+C {iopin.sym} 1020 60 0 0 {name=p14 lab=Clk}
+C {iopin.sym} 670 -80 3 0 {name=p15 lab=Clr
 }
+C {iopin.sym} 940 -80 3 0 {name=p16 lab=Clr
+}
+C {iopin.sym} 620 -80 3 0 {name=p17 lab=Vdd}
+C {iopin.sym} 890 -80 3 0 {name=p20 lab=Vdd}
+C {iopin.sym} -10 20 2 0 {name=p12 lab=Q0}
+C {iopin.sym} 300 0 2 0 {name=p18 lab=Q1}
+C {iopin.sym} 580 0 2 0 {name=p19 lab=Q2}
+C {iopin.sym} 1020 -30 0 0 {name=p21 lab=Sout}
+C {iopin.sym} 850 0 2 0 {name=p22 lab=Q3}

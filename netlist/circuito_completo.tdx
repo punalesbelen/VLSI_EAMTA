@@ -1,0 +1,331 @@
+tEDAx v1
+begin netlist v1 circuito_completo
+#subcircuit contador1bit x1
+#map clr -> Clr
+#map Dn -> Q0
+#map CE -> CE
+#map clk -> Clk
+#map vdd -> Vdd
+#map vss -> Vss
+#map sout -> net1
+#  subcircuit flipflop x1
+#  map D -> x1.net1
+#  map Q -> Q0
+#  map vss -> Vss
+#  map clr -> Clr
+#  map clk -> Clk
+#  map vdd -> Vdd
+#    subcircuit interruptor x1
+#    map N -> Clk
+#    map in -> x1.net1
+#    map out -> x1.x1.net1
+#    map P -> x1.x1.nclk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x2
+#    map Vdd -> Vdd
+#    map Out -> x1.x1.nclk
+#    map in -> Clk
+#    map Vss -> Vss
+#    subcircuit interruptor x3
+#    map N -> x1.x1.nclk
+#    map in -> x1.x1.net1
+#    map out -> x1.x1.net5
+#    map P -> Clk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x4
+#    map Vdd -> Vdd
+#    map Out -> x1.x1.net2
+#    map in -> x1.x1.net1
+#    map Vss -> Vss
+#    subcircuit interruptor x5
+#    map N -> x1.x1.nclk
+#    map in -> x1.x1.net2
+#    map out -> x1.x1.net3
+#    map P -> Clk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit puertanor x6
+#    map vdd -> Vdd
+#    map vout -> x1.x1.net5
+#    map B -> x1.x1.net2
+#    map A -> Clr
+#    map vss -> Vss
+#    subcircuit interruptor x7
+#    map N -> Clk
+#    map in -> x1.x1.net3
+#    map out -> x1.x1.net4
+#    map P -> x1.x1.nclk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x8
+#    map Vdd -> Vdd
+#    map Out -> x1.x1.net4
+#    map in -> Q0
+#    map Vss -> Vss
+#    subcircuit puertanor x9
+#    map vdd -> Vdd
+#    map vout -> Q0
+#    map B -> x1.x1.net3
+#    map A -> Clr
+#    map vss -> Vss
+#  subcircuit puertaxor x2
+#  map Vdd -> Vdd
+#  map A -> Q0
+#  map B -> CE
+#  map Z -> x1.net1
+#  map vss -> Vss
+#  subcircuit puertaand x3
+#  map vdd -> Vdd
+#  map out -> net1
+#  map A -> CE
+#  map B -> Q0
+#  map vss -> Vss
+#subcircuit contador1bit x2
+#map clr -> Clr
+#map Dn -> Q1
+#map CE -> net1
+#map clk -> Clk
+#map vdd -> Vdd
+#map vss -> Vss
+#map sout -> net2
+#  subcircuit flipflop x1
+#  map D -> x2.net1
+#  map Q -> Q1
+#  map vss -> Vss
+#  map clr -> Clr
+#  map clk -> Clk
+#  map vdd -> Vdd
+#    subcircuit interruptor x1
+#    map N -> Clk
+#    map in -> x2.net1
+#    map out -> x2.x1.net1
+#    map P -> x2.x1.nclk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x2
+#    map Vdd -> Vdd
+#    map Out -> x2.x1.nclk
+#    map in -> Clk
+#    map Vss -> Vss
+#    subcircuit interruptor x3
+#    map N -> x2.x1.nclk
+#    map in -> x2.x1.net1
+#    map out -> x2.x1.net5
+#    map P -> Clk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x4
+#    map Vdd -> Vdd
+#    map Out -> x2.x1.net2
+#    map in -> x2.x1.net1
+#    map Vss -> Vss
+#    subcircuit interruptor x5
+#    map N -> x2.x1.nclk
+#    map in -> x2.x1.net2
+#    map out -> x2.x1.net3
+#    map P -> Clk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit puertanor x6
+#    map vdd -> Vdd
+#    map vout -> x2.x1.net5
+#    map B -> x2.x1.net2
+#    map A -> Clr
+#    map vss -> Vss
+#    subcircuit interruptor x7
+#    map N -> Clk
+#    map in -> x2.x1.net3
+#    map out -> x2.x1.net4
+#    map P -> x2.x1.nclk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x8
+#    map Vdd -> Vdd
+#    map Out -> x2.x1.net4
+#    map in -> Q1
+#    map Vss -> Vss
+#    subcircuit puertanor x9
+#    map vdd -> Vdd
+#    map vout -> Q1
+#    map B -> x2.x1.net3
+#    map A -> Clr
+#    map vss -> Vss
+#  subcircuit puertaxor x2
+#  map Vdd -> Vdd
+#  map A -> Q1
+#  map B -> net1
+#  map Z -> x2.net1
+#  map vss -> Vss
+#  subcircuit puertaand x3
+#  map vdd -> Vdd
+#  map out -> net2
+#  map A -> net1
+#  map B -> Q1
+#  map vss -> Vss
+#subcircuit contador1bit x3
+#map clr -> Clr
+#map Dn -> Q2
+#map CE -> net2
+#map clk -> Clk
+#map vdd -> Vdd
+#map vss -> Vss
+#map sout -> net3
+#  subcircuit flipflop x1
+#  map D -> x3.net1
+#  map Q -> Q2
+#  map vss -> Vss
+#  map clr -> Clr
+#  map clk -> Clk
+#  map vdd -> Vdd
+#    subcircuit interruptor x1
+#    map N -> Clk
+#    map in -> x3.net1
+#    map out -> x3.x1.net1
+#    map P -> x3.x1.nclk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x2
+#    map Vdd -> Vdd
+#    map Out -> x3.x1.nclk
+#    map in -> Clk
+#    map Vss -> Vss
+#    subcircuit interruptor x3
+#    map N -> x3.x1.nclk
+#    map in -> x3.x1.net1
+#    map out -> x3.x1.net5
+#    map P -> Clk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x4
+#    map Vdd -> Vdd
+#    map Out -> x3.x1.net2
+#    map in -> x3.x1.net1
+#    map Vss -> Vss
+#    subcircuit interruptor x5
+#    map N -> x3.x1.nclk
+#    map in -> x3.x1.net2
+#    map out -> x3.x1.net3
+#    map P -> Clk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit puertanor x6
+#    map vdd -> Vdd
+#    map vout -> x3.x1.net5
+#    map B -> x3.x1.net2
+#    map A -> Clr
+#    map vss -> Vss
+#    subcircuit interruptor x7
+#    map N -> Clk
+#    map in -> x3.x1.net3
+#    map out -> x3.x1.net4
+#    map P -> x3.x1.nclk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x8
+#    map Vdd -> Vdd
+#    map Out -> x3.x1.net4
+#    map in -> Q2
+#    map Vss -> Vss
+#    subcircuit puertanor x9
+#    map vdd -> Vdd
+#    map vout -> Q2
+#    map B -> x3.x1.net3
+#    map A -> Clr
+#    map vss -> Vss
+#  subcircuit puertaxor x2
+#  map Vdd -> Vdd
+#  map A -> Q2
+#  map B -> net2
+#  map Z -> x3.net1
+#  map vss -> Vss
+#  subcircuit puertaand x3
+#  map vdd -> Vdd
+#  map out -> net3
+#  map A -> net2
+#  map B -> Q2
+#  map vss -> Vss
+#subcircuit contador1bit x4
+#map clr -> Clr
+#map Dn -> Q3
+#map CE -> net3
+#map clk -> Clk
+#map vdd -> Vdd
+#map vss -> Vss
+#map sout -> Sout
+#  subcircuit flipflop x1
+#  map D -> x4.net1
+#  map Q -> Q3
+#  map vss -> Vss
+#  map clr -> Clr
+#  map clk -> Clk
+#  map vdd -> Vdd
+#    subcircuit interruptor x1
+#    map N -> Clk
+#    map in -> x4.net1
+#    map out -> x4.x1.net1
+#    map P -> x4.x1.nclk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x2
+#    map Vdd -> Vdd
+#    map Out -> x4.x1.nclk
+#    map in -> Clk
+#    map Vss -> Vss
+#    subcircuit interruptor x3
+#    map N -> x4.x1.nclk
+#    map in -> x4.x1.net1
+#    map out -> x4.x1.net5
+#    map P -> Clk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x4
+#    map Vdd -> Vdd
+#    map Out -> x4.x1.net2
+#    map in -> x4.x1.net1
+#    map Vss -> Vss
+#    subcircuit interruptor x5
+#    map N -> x4.x1.nclk
+#    map in -> x4.x1.net2
+#    map out -> x4.x1.net3
+#    map P -> Clk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit puertanor x6
+#    map vdd -> Vdd
+#    map vout -> x4.x1.net5
+#    map B -> x4.x1.net2
+#    map A -> Clr
+#    map vss -> Vss
+#    subcircuit interruptor x7
+#    map N -> Clk
+#    map in -> x4.x1.net3
+#    map out -> x4.x1.net4
+#    map P -> x4.x1.nclk
+#    map vss -> Vss
+#    map vdd -> Vdd
+#    subcircuit untitled x8
+#    map Vdd -> Vdd
+#    map Out -> x4.x1.net4
+#    map in -> Q3
+#    map Vss -> Vss
+#    subcircuit puertanor x9
+#    map vdd -> Vdd
+#    map vout -> Q3
+#    map B -> x4.x1.net3
+#    map A -> Clr
+#    map vss -> Vss
+#  subcircuit puertaxor x2
+#  map Vdd -> Vdd
+#  map A -> Q3
+#  map B -> net3
+#  map Z -> x4.net1
+#  map vss -> Vss
+#  subcircuit puertaand x3
+#  map vdd -> Vdd
+#  map out -> Sout
+#  map A -> net3
+#  map B -> Q3
+#  map vss -> Vss
+end netlist

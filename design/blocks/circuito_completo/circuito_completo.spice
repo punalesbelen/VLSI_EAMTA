@@ -1,11 +1,10 @@
 ** sch_path: /home/eamtastudent/VLSI_EAMTA/design/blocks/circuito_completo/circuito_completo.sch
 .subckt circuito_completo clr Dn CE CLK vdd vss Sout
-*.PININFO Q0:B Q1:B Q2:B Q3:B Sout:B CE:B Vss:B Clk:B Vdd:B Clr:B Vss:B Vdd:B Clr:B Clk:B Vss:B Vss:B Clk:B Clk:B Clr:B Clr:B
-*+ Vdd:B Vdd:B
-x1 Clr Q0 CE Clk Vdd Vss net1 contador1bit
-x2 Clr Q1 net1 Clk Vdd Vss net2 contador1bit
-x3 Clr Q2 net2 Clk Vdd Vss net3 contador1bit
-x4 Clr Q3 net3 Clk Vdd Vss Sout contador1bit
+*.PININFO Q0:B Q1:B Q2:B Q3:B
+x1 CLR Q0 CE CLK Vdd Vss net1 contador1bit
+x2 CLR Q1 net1 CLK Vdd Vss net2 contador1bit
+x3 CLR Q2 net2 CLK Vdd Vss net3 contador1bit
+x4 CLR Q3 net3 CLK Vdd Vss sout contador1bit
 .ends
 
 * expanding   symbol:  blocks/contador1bit/contador1bit.sym # of pins=7
